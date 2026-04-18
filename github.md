@@ -12,5 +12,8 @@ git commit -m "Remove .env from repository"
 git push origin main
 
 브런치 만들기
-git checkout -b 브랜치이름
+생성 : git checkout -b 브랜치이름
+
+브런치 변경 : git fetch origin -> git switch 브랜치 이름
+변경 : git checkout 브랜치이름
 git push origin 브랜치이름
