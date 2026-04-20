@@ -48,6 +48,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60   // 1시간 유지
     }
 }));
+// [ MiddleWar ]
 
 // [ 라우터 ]
 app.use('/', webRouter);
@@ -56,12 +57,5 @@ app.use('/', webRouter);
 // app.use(error.errorHandler);
 
 app.listen(app.get('port'), () => {
-    // npx ts-node ./source/index.ts
-    // taskkill /f /im node.exe
-
-    // search
-    // tasklist | findstr node
-    // 포트로 찾기 : netstat -ano | findstr :3000
-    // PID 강제 종료 : taskkill /f /pid 찾은숫자
     console.log(`Server is running on port http://localhost:${app.get('port')}`);
 });

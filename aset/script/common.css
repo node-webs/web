@@ -1,0 +1,29 @@
+/* 1. 모든 요소의 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 레이아웃 계산을 편하게 함 */
+}
+
+/* 2. 리스트 스타일 제거 */
+ul, ol, li {
+    list-style: none;
+}
+
+/* 3. 링크 밑줄 및 색상 초기화 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 4. 이미지 정렬 오류 방지 */
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+/* 5. 테이블 선 겹침 방지 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

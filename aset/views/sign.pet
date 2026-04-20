@@ -1,0 +1,95 @@
+{% extends "./layout/SignLayout.pet" %}
+
+{% block title %}펫샵 : 로그인{% endblock %}
+
+
+{% block head %}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/script/auth/sign.css">
+    <script src="/script/sign.js" defer></script>
+{% endblock %}
+
+{% block content %}
+<!-- signin form -->
+<div class="form-box signin">
+    <form id="signinForm" action="/auth/signin" method="post">
+        <h1>로그인</h1>
+        <div class="input-box">
+            <input type="text" name="email" placeholder="Email" required>
+            <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Password" maxlength="20"required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="forgot-link">
+            <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p>or login with social platforms</p>
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-google' ></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-github' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+        </div>
+    </form>
+</div>
+<!-- signup form -->
+<div class="form-box signup">
+    <form id="signupForm" action="/auth/signup" method="post">
+        <h1>회원가입</h1>
+        <div class="input-box email-group">
+            <div class="input-field">
+                <input type="text" name="email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <button type="button" id="checkEmailBtn" class="check-btn">중복확인</button>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Password" maxlength="20" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" name="repassword" placeholder="Re Password" maxlength="20" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        
+        <!-- 추가된 체크박스 그룹 -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="btn1" name="petType" value="dog">
+            <label for="btn1">강아지</label>                    
+            <input type="checkbox" id="btn2" name="petType" value="cat">
+            <label for="btn2">고양이</label>
+        </div>
+
+        <button type="submit" class="btn signupSubmitBtn" disabled style="opacity: 0.5; cursor: not-allowed;">회원가입</button>
+        
+        <p>or signup with social platforms</p>
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-google' ></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-github' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+        </div>
+    </form>
+</div>
+<!-- toggle-box -->
+<div class="toggle-box">
+    <div class="toggle-panel toggle-left">
+        <h1>Hello, Welcome!</h1>
+        <p>Don't have an account?</p>
+        <button class="btn signup-btn">회원가입</button>
+    </div>
+    <div class="toggle-panel toggle-right">
+        <h1>Welcome, Back!</h1>
+        <p>Already have an account?</p>
+        <button class="btn signin-btn">로그인</button>
+    </div>
+</div>
+<!-- 커스텀 알림창 구조 -->
+<div id="custom-alert" class="custom-alert">
+    <i class='bx bxs-error-circle'></i>
+    <span class="alert-message">메시지 내용</span>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="page-version" content="{{ csrfPart1 }}">
+    <link rel="stylesheet" href="/script/common.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(90deg, white, pink);
+            font-family: "Sunflower", sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 850px;
+            height: 550px;
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .container.active .form-box {
+            /* 로그인 박스를 왼쪽으로 옮김 */
+            right: 50%;
+        }
+    </style>
+    {% block head %}<!-- 자식 페이지의 head 블록 내용 -->{% endblock %}
+</head>
+<body>
+    <div class="container {{ 'active' if not isSignin }}" data-is-display="{{ csrfPart2 }}">
+        <!-- isSignin=true -> login page | isSignin=flase -> sign page -->
+        <!-- isSignin이 False일 때 : 'active'라는 문자열을 반환 :  .container.active-->
+        {% block content %}<!-- 개별 페이지의 내용 -->{% endblock %}
+    </div>
+</body>
+</html>
