@@ -9,6 +9,7 @@ import morgan, { StreamOptions } from 'morgan';
 
 // [ library ]
 import logger from './lib/logger';
+import { mw } from './lib/base';
 // [ router ]
 import webRouter from './page/web.router';
 // [ dotenv ]
@@ -49,7 +50,7 @@ app.use(session({
     }
 }));
 // [ MiddleWar ]
-
+app.use(mw.CsrfPublish);
 // [ 라우터 ]
 app.use('/', webRouter);
 // [ 에러 핸들링 ]

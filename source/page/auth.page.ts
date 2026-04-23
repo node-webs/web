@@ -5,7 +5,7 @@ const view = {
         res.render('sign', { title: 'PET : 로그인', isSignin: true });
     },
     SignUp: (req: Request, res: Response) => {
-        res.render('sign', { title: 'PET : 회원가입', isSignin: true });
+        res.render('sign', { title: 'PET : 회원가입', isSignin: false });
     },
 }
 
