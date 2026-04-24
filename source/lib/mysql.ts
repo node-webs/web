@@ -1,8 +1,15 @@
 import axios from 'axios';
+import path from 'path';
+import dotenv from 'dotenv';
 import mysql, { Pool, ResultSetHeader, RowDataPacket } from 'mysql2/promise';
 // Promise를 지원하여 async/await 코딩이 가능
 // RowDataPacket(조회 결과)과 ResultSetHeader(실행 결과) 타입
 
+const envMode = process.env.NODE_ENV || 'web';
+const envPath = path.join(process.cwd(), '/aset/data', `.env.${envMode}`);
+dotenv.config({ path: envPath });
+
+ console.log('c--------------------------', process.env.DB_USER);
 // MySQL 데이터베이스 연결 풀 생성
 const pool: Pool = mysql.createPool({
     host: process.env.DB_HOST,
@@ -13,6 +20,7 @@ const pool: Pool = mysql.createPool({
     waitForConnections: true, // 10개가 모두 사용 중일 때 새로운 요청이 오면 에러를 내지 않고 빈 자리가 날 때까지 기다림
     queueLimit: 0 // 대기열에 제한을 두지 않아 요청이 밀려도 차례대로 처리
 });
+
 
 /**
  * 관리자에게 슬랙 알림을 보내는 함수

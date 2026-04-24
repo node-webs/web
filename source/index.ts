@@ -58,5 +58,5 @@ app.use('/', webRouter);
 // app.use(error.errorHandler);
 
 app.listen(app.get('port'), () => {
-    console.log(`Server is running on port http://localhost:${app.get('port')}`);
+    console.log(`Server is running on port http://localhost:${app.get('port')}/로그인`);
 });

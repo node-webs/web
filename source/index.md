@@ -163,3 +163,7 @@ npm install mysql2
 npm install --save express-validator
 npm install --save bcrypt, --save-dev @types/bcrypt
 npm install --save jsonwebtoken, --save-dev @types/jsonwebtoken
+
+
+# express-validator
+npm install --save express-validator

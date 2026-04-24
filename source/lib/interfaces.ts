@@ -20,3 +20,9 @@ export interface IUser extends RowDataPacket {
     isActive: 0 | 1;
     createdAt: Date;   
 }
+
+// 응답 데이터 타입을 위한 인터페이스 (필요 시)
+export interface EmailCheckUserRow extends RowDataPacket {
+    id: number;
+    email: string;
+}
