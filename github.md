@@ -6,6 +6,12 @@ git branch -M main
 git remote add origin https://github.com/node-webs/web.git
 git push -u origin main
 
+
+git ac 'commit'
+
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+git config --global core.autocrlf true
+
 업로드 상태에서 파일 삭제
 git rm --cached .env
 git commit -m "Remove .env from repository"

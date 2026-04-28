@@ -118,6 +118,7 @@ npm install --save cookie-parser, -D @types/cookie-parser
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
+
 # session
 개인 저장 공간 생성 (req.session 객체 사용)
 npm install express-session, -D @types/express-session
@@ -167,3 +168,7 @@ npm install --save jsonwebtoken, --save-dev @types/jsonwebtoken
 
 # express-validator
 npm install --save express-validator
+
+
+git config --global alias.ac '!git add . && git commit -m'
+git ac "커밋 메시지 입력"
